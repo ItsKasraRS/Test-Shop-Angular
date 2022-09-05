@@ -1,0 +1,22 @@
+
+<p>
+  <mat-toolbar color="accent">
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span style="margin-right: 20px">Blop online shop</span>
+  <a mat-button routerLink="products/">Products</a>
+  <a mat-button routerLink="login/" *ngIf="!isAuthenticated">Sign in</a>
+  <span class="example-spacer"></span>
+  <a mat-button routerLink="logout/" *ngIf="isAuthenticated" (click)="logout()">Sign out</a>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon>share</mat-icon>
+ </button>
+</mat-toolbar>
+</p>
+
+<p>
+<router-outlet></router-outlet>

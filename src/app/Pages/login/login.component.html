@@ -1,0 +1,43 @@
+<div class="container">
+  <br>
+  <h3 style="font-size: 20px;" class="text-light">Sign in</h3>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <div class="card bg-dark">
+        <div class="card-header">
+          <header class="text-light">
+            Sign in to Blop shop
+          </header>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="LoginForm" (ngSubmit)="submit()">
+            <p>
+              <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="username" class="text-light">
+                <mat-error *ngIf="LoginForm.controls.username.errors?.required && LoginForm.controls.username.touched">please enter username</mat-error>
+                <mat-error *ngIf="LoginForm.controls.username.errors?.maxlength && LoginForm.controls.username.touched">username can't be more than 200 characters</mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Placeholder" type="password" formControlName="password" class="text-light">
+                <mat-error *ngIf="LoginForm.controls.password.errors?.required && LoginForm.controls.password.touched">please enter password</mat-error>
+                <mat-error *ngIf="LoginForm.controls.password.errors?.maxlength && LoginForm.controls.password.touched">password can't be more than 200 characters</mat-error>
+                <mat-error *ngIf="LoginForm.controls.password.errors?.minlength && LoginForm.controls.password.touched">password can't be less than 5 characters</mat-error>
+              </mat-form-field>
+            </p>
+            <button type="submit" [disabled]="!LoginForm.valid" mat-raised-button color="accent" style="margin-right: 10px;">Sign in</button>
+            <a mat-raised-button routerLink="something">New account</a>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>

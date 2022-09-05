@@ -1,0 +1,18 @@
+<div class="container">
+  <br>
+  <h3 style="font-size: 20px;" class="text-light">Products</h3>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of products">
+      <div class="card bg-dark" style="width: 18rem;margin-bottom: 10px;">
+        <img [src]="item.image" class="card-img-top" alt="item.title">
+        <div class="card-body">
+          <h5 class="card-title text-light" style="height: 60px !important;">{{item.title}}</h5>
+          <p class="card-text text-light">{{item.price | currency: 'USD'}}</p>
+          <mat-icon aria-hidden="false" aria-label="Rating" fontIcon="star_border" style="color: #a39d2f;"></mat-icon> <span class="text-light" style="vertical-align: 6px;">{{item.rating.rate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

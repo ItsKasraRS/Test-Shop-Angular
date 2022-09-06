@@ -32,4 +32,7 @@ export class GlobalService {
       this.isAuthenticated.next(false);
     }
   }
+  getProductById(id: number): Observable<any> {
+    return this.http.get('https://fakestoreapi.com/products/'+id);
+  }
 }

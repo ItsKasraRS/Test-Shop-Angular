@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 @Component({
   selector: 'app-products',
@@ -8,7 +10,7 @@ import { GlobalService } from 'src/app/services/global/global.service';
 })
 export class ProductsComponent implements OnInit {
   products: any = [];
-  constructor(private service: GlobalService) { }
+  constructor(private service: GlobalService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     // this.service.productList().then(res=>{
@@ -21,4 +23,11 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+
+  SeeDetails(id: number){
+    const dialogRef = this.dialog.open(ProductDetailsComponent, {
+      width: '500px',
+      data: {id: id},
+    });
+  }
 }

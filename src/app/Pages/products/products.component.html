@@ -5,7 +5,7 @@
   <br>
   <div class="row">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of products">
-      <div class="card bg-dark" style="width: 18rem;margin-bottom: 10px;">
+      <div class="card bg-dark" style="width: 18rem;margin-bottom: 10px;" (click)="SeeDetails(item.id)">
         <img [src]="item.image" class="card-img-top" alt="item.title">
         <div class="card-body">
           <h5 class="card-title text-light" style="height: 60px !important;">{{item.title}}</h5>

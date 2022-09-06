@@ -1,0 +1,14 @@
+<p mat-dialog-title>{{product.title}}</p>
+<div mat-dialog-content>
+  <img [src]="product.image" style="width:80%; border-radius: 10px;display: block;margin: auto">
+  <hr>
+  <p style="line-height: 30px; text-align: justify">
+    {{product.description}}
+  </p>
+
+</div>
+<div mat-dialog-actions style="display: flex;flex-direction: row;">
+  <button mat-stroked-button color="accent" (click)="AddToCart()">Add to cart</button>
+  <div style="flex: 1 1 auto;"></div>
+  <span style="font-size: 20px;color: rgb(114, 240, 148);">{{product.price | currency: 'USD'}}</span>
+</div>
